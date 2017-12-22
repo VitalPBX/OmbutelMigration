@@ -11,6 +11,9 @@ rm -rf /var/lib/asterisk/sounds/fr_CA_f_June
 # Reinstall the latest version of asterisk sounds
 yum reinstall asterisk-sounds-* -y
 
+# Reinstall VitalPBX sounds
+yum reinstall vitalpbx-sounds* -y
+
 # Remove the old ssh welcome
 rm -rf /etc/profile.d/obtwelcome.sh
 
