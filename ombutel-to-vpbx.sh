@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+#Clean Yum Cache
+yum clean all 
+rm -rf /var/cache/yum
+
 #Check if Ombutel is Installed
 OMBUTEL_INSTALLED="yes"
 if ! rpm -q ombutel >/dev/null 2>/dev/null
