@@ -1,7 +1,22 @@
 #!/bin/bash
 set -e
-# Update Ombutel as Usual
-yum update ombutel -y
+
+#Check if Ombutel is Installed
+OMBUTEL_INSTALLED="yes"
+if ! rpm -q ombutel >/dev/null 2>/dev/null
+    then OMBUTEL_INSTLLED="no"
+fi
+
+#Download the beta repo of VitalPBX
+wget -P /etc/yum.repos.d/ https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/vitalpbx.repo
+
+if [ "$OMBUTEL_INSTALLED" = "yes" ]; then
+  # Update Ombutel as Usual
+  yum update ombutel -y
+else
+  # Install VitalPBX
+  yum install vitalpbx -y
+fi
 
 # Delete old asterisk sounds folders
 rm -rf /var/lib/asterisk/sounds/en_US_f_Allison
