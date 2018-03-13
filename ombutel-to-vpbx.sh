@@ -2,7 +2,7 @@
 set -e
 
 #Clean Yum Cache
-yum clean all 
+yum clean all
 rm -rf /var/cache/yum
 
 #Check if Ombutel is Installed
@@ -11,8 +11,18 @@ if ! rpm -q ombutel >/dev/null 2>/dev/null
     then OMBUTEL_INSTLLED="no"
 fi
 
+#Check if Sonata Recordings is Installed
+SONATAREC_INSTALLED="yes"
+if ! rpm -q sonata-recordings >/dev/null 2>/dev/null
+    then SONATAREC_INSTALLED="no"
+fi
+
 #Download the beta repo of VitalPBX
 wget -P /etc/yum.repos.d/ https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/vitalpbx.repo
+
+if [ "$SONATAREC_INSTALLED" = "yes" ]; then
+  yum remove ombutel-trunks-passthrough -y
+fi
 
 if [ "$OMBUTEL_INSTALLED" = "yes" ]; then
   # Update Ombutel as Usual
