@@ -1,4 +1,4 @@
-# ![VPBX Logo](https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/logo.png)  | Migrating from Ombutel to VitalPBX
+# Migrating from Ombutel to VitalPBX
 
 ### Table of Contents
 **[Usage Instructions](#usage-instructions)**<br>
@@ -52,3 +52,5 @@ rm -rf /var/cache/yum
 - [Twitter](https://goo.gl/8fMsSc)
 - [Instagram](https://goo.gl/QzvZEJ)
 - [Youtube](https://goo.gl/h9SW1i)
+
+![VPBX Logo](https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/logo.png)
