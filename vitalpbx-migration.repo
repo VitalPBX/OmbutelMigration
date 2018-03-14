@@ -1,5 +1,5 @@
-[vpbx-beta]
-name=VitalPBX-Beta
+[vpbx-migration]
+name=VitalPBX-Migration
 baseurl=http://repo.telesoftsa.com/vitalpbxb/rpms/$basearch/
 gpgcheck=0
 enabled=1

@@ -18,7 +18,7 @@ if ! rpm -q sonata-recordings >/dev/null 2>/dev/null
 fi
 
 #Download the beta repo of VitalPBX
-wget -P /etc/yum.repos.d/ https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/vitalpbx.repo
+wget -P /etc/yum.repos.d/ https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/vitalpbx-migration.repo
 
 if [ "$SONATAREC_INSTALLED" = "yes" ]; then
   yum remove ombutel-trunks-passthrough -y
