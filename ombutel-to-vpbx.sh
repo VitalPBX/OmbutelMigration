@@ -37,6 +37,10 @@ rm -rf /var/lib/asterisk/sounds/en_US_f_Allison
 rm -rf /var/lib/asterisk/sounds/es_NI_f_Maria
 rm -rf /var/lib/asterisk/sounds/fr_CA_f_June
 
+# Delete Obsolte Themes
+rm -rf /usr/share/ombutel/www/themes/ombutel
+rm -rf /usr/share/ombutel/www/themes/ombulight
+
 # Reinstall the latest version of asterisk sounds
 yum reinstall asterisk-sounds-* -y
 
