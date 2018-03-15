@@ -21,6 +21,7 @@ fi
 wget -P /etc/yum.repos.d/ https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/vitalpbx-migration.repo
 
 if [ "$SONATAREC_INSTALLED" = "yes" ]; then
+  yum update sonata-recordings -y
   yum remove ombutel-trunks-passthrough -y
 fi
 
