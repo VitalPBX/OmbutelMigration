@@ -54,6 +54,13 @@ yum reinstall vitalpbx-sounds* -y
 # Remove the old ssh welcome
 rm -rf /etc/profile.d/obtwelcome.sh
 
+#Remove the repository used during the migration
+rm -rf /etc/yum.repos.d/vitalpbx-migration.repo
+
+#Clean Yum Cache Again
+yum clean all
+rm -rf /var/cache/yum
+
 # All Done
 echo Welcome to VitalPBX!
 /bin/bash /etc/profile.d/vitalwelcome.sh
