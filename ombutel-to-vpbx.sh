@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+#Delete all the VitalPBX Repositories
+rm -rf /etc/yum.repos.d/vitalpbx*.repo
+
 #Clean Yum Cache
 yum clean all
 rm -rf /var/cache/yum
