@@ -37,7 +37,7 @@ Fatal error: Uncaught exception 'Exception' with message 'SQLSTATE[42S02]: Base 
 
   You must to go to the Linux console and execute the following script:
 <pre>
-usr/share/ombutel/scripts/apply_patches
+/usr/share/ombutel/scripts/apply_patches
 </pre>
 
 3. When you ran manually the patches script (apply_patches) a database error appears saying that there is a duplicated entry
