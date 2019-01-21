@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-#Delete all the VitalPBX Repositories
+#Delete all the Ombutel/VitalPBX Repositories
 rm -rf /etc/yum.repos.d/vitalpbx*.repo
+rm -rf /etc/yum.repos.d/ombu*.repo
 
 #Clean Yum Cache
 yum clean all
