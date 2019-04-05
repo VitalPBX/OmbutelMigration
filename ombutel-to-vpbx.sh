@@ -9,48 +9,31 @@ rm -rf /etc/yum.repos.d/ombu*.repo
 yum clean all
 rm -rf /var/cache/yum
 
-#Check if Ombutel is Installed
-OMBUTEL_INSTALLED="yes"
-if ! rpm -q ombutel >/dev/null 2>/dev/null
-    then OMBUTEL_INSTLLED="no"
-fi
-
-#Check if Sonata Recordings is Installed
-SONATAREC_INSTALLED="yes"
-if ! rpm -q sonata-recordings >/dev/null 2>/dev/null
-    then SONATAREC_INSTALLED="no"
-fi
-
 #Download the beta repo of VitalPBX
 wget -P /etc/yum.repos.d/ https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/vitalpbx-migration.repo
 
-if [ "$SONATAREC_INSTALLED" = "yes" ]; then
-  yum update sonata-recordings -y
-  yum remove ombutel-trunks-passthrough -y
-fi
-
-if [ "$OMBUTEL_INSTALLED" = "yes" ]; then
-  # Update Ombutel as Usual
-  yum update ombutel -y
-else
-  # Install VitalPBX
-  yum install vitalpbx -y
-fi
+yum remove ombutel* -y
+yum remove telerec -y
+yum remove sonata* -y
 
 # Delete old asterisk sounds folders
 rm -rf /var/lib/asterisk/sounds/en_US_f_Allison
 rm -rf /var/lib/asterisk/sounds/es_NI_f_Maria
 rm -rf /var/lib/asterisk/sounds/fr_CA_f_June
 
+unlink /var/lib/asterisk/sounds/en
+unlink /var/lib/asterisk/sounds/en_US
+unlink /var/lib/asterisk/sounds/es
+unlink /var/lib/asterisk/sounds/es_NI
+unlink /var/lib/asterisk/sounds/fr
+unlink /var/lib/asterisk/sounds/fr_CA
+
 # Delete Obsolte Themes
 rm -rf /usr/share/ombutel/www/themes/ombutel
 rm -rf /usr/share/ombutel/www/themes/ombulight
 
-# Reinstall the latest version of asterisk sounds
-yum reinstall asterisk-sounds-* -y
-
-# Reinstall VitalPBX sounds
-yum reinstall vitalpbx-sounds* -y
+#Install VitalPBX
+yum install vitalpbx
 
 # Remove the old ssh welcome
 rm -rf /etc/profile.d/obtwelcome.sh
