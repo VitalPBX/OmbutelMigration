@@ -27,6 +27,9 @@ rm -rf /var/lib/asterisk/sounds/fr_CA_f_June
 rm -rf /usr/share/ombutel/www/themes/ombutel
 rm -rf /usr/share/ombutel/www/themes/ombulight
 
+#Update the System
+yum update -y
+
 #Install VitalPBX
 yum install vitalpbx -y
 
@@ -40,6 +43,20 @@ rm -rf /etc/yum.repos.d/vitalpbx-migration.repo
 yum clean all
 rm -rf /var/cache/yum
 
+# Restart httpd
+systemctl restart httpd
+
+#Start vpbx-setup.service
+systemctl start vpbx-setup.service
+
+# Enable the http access:
+firewall-cmd --add-service=http
+firewall-cmd --reload
+
 # All Done
 echo Welcome to VitalPBX!
 /bin/bash /etc/profile.d/vitalwelcome.sh
+
+#Reboot
+echo "Rebooting System"
+reboot
