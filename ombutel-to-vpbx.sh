@@ -12,7 +12,7 @@ rm -rf /var/cache/yum
 #Download the beta repo of VitalPBX
 wget -P /etc/yum.repos.d/ https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/vitalpbx-migration.repo
 
-yum remove ombutel* -y
+yum remove ombutel ombutel-asterisk-configs ombutel-fail2ban-config ombutel-themes ombutel-sounds-es ombutel-sounds ombutel-sounds-he -y
 yum remove telerec -y
 yum remove sonata* -y
 
