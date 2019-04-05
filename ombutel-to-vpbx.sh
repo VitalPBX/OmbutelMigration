@@ -28,7 +28,7 @@ rm -rf /usr/share/ombutel/www/themes/ombutel
 rm -rf /usr/share/ombutel/www/themes/ombulight
 
 #Install VitalPBX
-yum install vitalpbx
+yum install vitalpbx -y
 
 # Remove the old ssh welcome
 rm -rf /etc/profile.d/obtwelcome.sh
