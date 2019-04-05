@@ -17,16 +17,11 @@ yum remove telerec -y
 yum remove sonata* -y
 
 # Delete old asterisk sounds folders
+find /var/lib/asterisk/sounds/ -maxdepth 1  -type l -delete
+
 rm -rf /var/lib/asterisk/sounds/en_US_f_Allison
 rm -rf /var/lib/asterisk/sounds/es_NI_f_Maria
 rm -rf /var/lib/asterisk/sounds/fr_CA_f_June
-
-unlink /var/lib/asterisk/sounds/en
-unlink /var/lib/asterisk/sounds/en_US
-unlink /var/lib/asterisk/sounds/es
-unlink /var/lib/asterisk/sounds/es_NI
-unlink /var/lib/asterisk/sounds/fr
-unlink /var/lib/asterisk/sounds/fr_CA
 
 # Delete Obsolte Themes
 rm -rf /usr/share/ombutel/www/themes/ombutel
