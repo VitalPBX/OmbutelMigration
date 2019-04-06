@@ -13,7 +13,7 @@ rm -rf /var/cache/yum
 wget -P /etc/yum.repos.d/ https://raw.githubusercontent.com/VitalPBX/OmbutelMigration/master/vitalpbx-migration.repo
 
 rpm -e --noscripts asterisk-hebrew 2> /dev/null &
-sleep 5
+sleep 20
 yum remove ombutel ombutel-asterisk-configs ombutel-fail2ban-config ombutel-themes ombutel-sounds-es ombutel-sounds ombutel-sounds-he asterisk* -y
 yum remove telerec -y
 yum remove sonata* -y
