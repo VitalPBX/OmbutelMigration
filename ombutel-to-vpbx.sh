@@ -29,13 +29,15 @@ rm -rf /usr/share/ombutel/www/themes/ombutel
 rm -rf /usr/share/ombutel/www/themes/ombulight
 
 #Update the System
-yum update -y
+yum update -y --disablerepo=vpbx
 
 #Install VitalPBX
 yum install vitalpbx-2.0.5-1.x86_64 -y
 
 #Update VitalPBX to its latest version
 yum update vitalpbx -y
+yum clean all
+yum update -y
 
 # Remove the old ssh welcome
 rm -rf /etc/profile.d/obtwelcome.sh
