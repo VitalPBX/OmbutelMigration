@@ -32,7 +32,10 @@ rm -rf /usr/share/ombutel/www/themes/ombulight
 yum update -y
 
 #Install VitalPBX
-yum install vitalpbx -y
+yum install vitalpbx-2.0.5-1.x86_64 -y
+
+#Update VitalPBX to its latest version
+yum update vitalpbx -y
 
 # Remove the old ssh welcome
 rm -rf /etc/profile.d/obtwelcome.sh
